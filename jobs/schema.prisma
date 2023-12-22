@@ -1,0 +1,23 @@
+datasource db {
+    provider = "postgresql"
+    url      = "postgresql://postgres:mUjEVRBnq1rS29Qa@db.rqoktlaqdgbosriqrzpw.supabase.co:5432/postgres"
+}
+
+generator client {
+  provider = "prisma-client-py"
+  interface = "asyncio"
+  recursive_type_depth = 5
+}
+
+model Fatura {
+    id                      Int      @id @default(autoincrement())
+    mesAnoReferencia        String
+    numeroCliente           BigInt
+    energiaEletricaQtd      Int
+    energiaEletricaValor    Float
+    energiaSceeQtd          Int
+    energiaSceeValor        Float
+    energiaCompensadaQtd    Int
+    energiaCompensadaValor  Float
+    ilumPublica             Float
+}
